@@ -1,4 +1,6 @@
+import { Link, useNavigate } from "react-router-dom";
 import Buttons from "../Buttons/Buttons";
+import Lenis from "@studio-freight/lenis";
 
 function ScreensHead({
   Home,
@@ -9,6 +11,49 @@ function ScreensHead({
   Haven,
   MakeReservation,
 }) {
+  const navigate = useNavigate();
+
+  const handleTastyHavens = () => {
+    navigate("/");
+  };
+  const reservation = () => {
+    scrollpage(reserve);
+  };
+
+  const aboutUs = () => {
+    scrollpage(about);
+  };
+
+  // Settings for lenis smooth scroll
+
+  const lenis = new Lenis({});
+
+  lenis.on("scroll", (e) => {
+    console.log(e);
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  const scrollpage = (component) => {
+    lenis.scrollTo(component, {
+      duration: 6,
+      immediate: false,
+      direction: "vertical",
+      easing: (x) =>
+        x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2,
+      gestureDirection: "vertical",
+      smooth: true,
+      smoothTouch: true,
+      touchMultiplier: 4,
+      infinite: false,
+    });
+  };
+
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row", width: "100%" }}>
@@ -33,9 +78,18 @@ function ScreensHead({
               fontSize: "20px",
             }}
           >
-            <li>{Home}</li>
-            <li>{Menu}</li>
-            <li>{About}</li>
+            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              {" "}
+              <li>{Home}</li>
+            </Link>
+
+            <Link
+              to="/OurMenu"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <li>{Menu}</li>
+            </Link>
+            <li onClick={aboutUs}>{About}</li>
             <li>{Contact}</li>
           </ul>
         </div>
@@ -49,7 +103,10 @@ function ScreensHead({
             alignItems: "center",
           }}
         >
-          <h4 style={{ fontSize: "28px", fontWeight: "500" }}>
+          <h4
+            style={{ fontSize: "28px", fontWeight: "500" }}
+            onClick={handleTastyHavens}
+          >
             {Tasty} <br /> {Haven}
           </h4>
         </div>
@@ -62,7 +119,11 @@ function ScreensHead({
             alignItems: "center",
           }}
         >
-          <Buttons NameBtn={MakeReservation} width={"20vw"} />
+          <Buttons
+            NameBtn={MakeReservation}
+            width={"20vw"}
+            onClick={reservation}
+          />
         </div>
       </div>
     </>

@@ -1,11 +1,11 @@
 import { Divider } from "@mui/material";
 import ScreensHead from "../component/screensHeader/ScreensHead";
-import Swip from "../features/Swip";
 import { useEffect, useState } from "react";
 import Buttons from "../component/Buttons/Buttons";
 import Cards from "../component/Card/Card";
-import { CustomTextField } from "../component/customTextField/CustomTextField";
 import Footer from "../component/Footer/Footer";
+import Swipper from "../features/Swip";
+import ReservationTable from "../component/ReservationTable/ReservationTable";
 
 function Home() {
   const url =
@@ -55,7 +55,7 @@ function Home() {
           </div>
           {/* End of page header */}
           <div className="secondGrid">
-            <Swip />
+            <Swipper />
           </div>
           <div
             className="thirdGrid"
@@ -79,6 +79,7 @@ function Home() {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                id="about"
               >
                 <small style={{ paddingTop: "5%" }}>ABOUT US</small>
               </div>
@@ -318,58 +319,7 @@ function Home() {
                   flexDirection: "column",
                 }}
               >
-                {/* Flex */}
-                <div
-                  style={{
-                    flex: ".1",
-                    display: "flex",
-                    // alignContent: "center",
-                    justifyContent: "center",
-                    // background: "pink",
-                  }}
-                >
-                  <Divider
-                    sx={{ width: "2px", height: "15vh", background: "black" }}
-                  />
-                </div>
-                {/* Reservation Text Field Header */}
-                <div
-                  style={{
-                    flex: ".2",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    // background: "red",
-                    gap: "2em",
-                  }}
-                >
-                  <div style={{ fontSize: "50px" }}>RESERVATIONS</div>
-                  <small>Book your table online now</small>
-                </div>
-                {/* Reservation Text Field */}
-                <div
-                  style={{
-                    flex: ".7",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: "1.5em",
-                    paddingTop: "2vh",
-                  }}
-                >
-                  <CustomTextField helperText={"Name"} />
-                  <CustomTextField helperText={"Phone"} />
-                  <CustomTextField helperText={"Number of persons"} />
-                  <div
-                    style={{
-                      paddingTop: "6vh",
-                    }}
-                  >
-                    <Buttons NameBtn={"Make Reservation"} />
-                  </div>
-                </div>
-                {/* End of Flex */}
+                <ReservationTable />
               </div>
               {/* End Of Flex */}
             </div>

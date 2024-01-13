@@ -6,7 +6,7 @@ function Cards() {
       <Card
         style={{
           width: "23%",
-          height: "60%",
+          height: "65%",
           display: "flex",
           flexDirection: "column",
         }}
