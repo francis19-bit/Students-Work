@@ -4,6 +4,8 @@ import Swip from "../features/Swip";
 import { useEffect, useState } from "react";
 import Buttons from "../component/Buttons/Buttons";
 import Cards from "../component/Card/Card";
+import { CustomTextField } from "../component/customTextField/CustomTextField";
+import Footer from "../component/Footer/Footer";
 
 function Home() {
   const url =
@@ -63,7 +65,7 @@ function Home() {
             <div
               style={{
                 flex: ".23",
-                background: "red",
+                // background: "red",
                 display: "flex",
                 flexDirection: "column",
               }}
@@ -117,7 +119,7 @@ function Home() {
             <div
               style={{
                 flex: ".23",
-                background: "cyan",
+                // background: "cyan",
                 display: "flex",
                 flexDirection: "column",
               }}
@@ -163,7 +165,7 @@ function Home() {
             <div
               style={{
                 flex: ".54",
-                background: "peru",
+                // background: "peru",
                 display: "flex",
                 flexDirection: "column",
               }}
@@ -180,7 +182,7 @@ function Home() {
                 <div
                   style={{
                     flex: ".1",
-                    background: "white",
+                    // background: "white",
                     justifyContent: "center",
                     display: "flex",
                   }}
@@ -194,7 +196,7 @@ function Home() {
                 <div
                   style={{
                     flex: ".15",
-                    background: "blue",
+                    // background: "blue",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -209,7 +211,7 @@ function Home() {
                 <div
                   style={{
                     flex: ".75",
-                    background: "yellow",
+                    // background: "yellow",
                     display: "flex",
                     flexDirection: "row",
                   }}
@@ -311,7 +313,7 @@ function Home() {
               <div
                 style={{
                   flex: ".5",
-                  background: "green",
+                  // background: "green",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -323,13 +325,14 @@ function Home() {
                     display: "flex",
                     // alignContent: "center",
                     justifyContent: "center",
-                    background: "pink",
+                    // background: "pink",
                   }}
                 >
                   <Divider
                     sx={{ width: "2px", height: "15vh", background: "black" }}
                   />
                 </div>
+                {/* Reservation Text Field Header */}
                 <div
                   style={{
                     flex: ".2",
@@ -337,20 +340,43 @@ function Home() {
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    background: "red",
+                    // background: "red",
                     gap: "2em",
                   }}
                 >
                   <div style={{ fontSize: "50px" }}>RESERVATIONS</div>
                   <small>Book your table online now</small>
                 </div>
-                <div style={{ flex: ".7" }}></div>
+                {/* Reservation Text Field */}
+                <div
+                  style={{
+                    flex: ".7",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: "1.5em",
+                    paddingTop: "2vh",
+                  }}
+                >
+                  <CustomTextField helperText={"Name"} />
+                  <CustomTextField helperText={"Phone"} />
+                  <CustomTextField helperText={"Number of persons"} />
+                  <div
+                    style={{
+                      paddingTop: "6vh",
+                    }}
+                  >
+                    <Buttons NameBtn={"Make Reservation"} />
+                  </div>
+                </div>
                 {/* End of Flex */}
               </div>
               {/* End Of Flex */}
             </div>
           </div>
-          <div className="fourthGrid"></div>
+          <div className="fourthGrid">
+            <Footer />
+          </div>
           {/* END OF GRIDING COMPONENTS */}
         </div>
         {/* END OF GRIDING SYSTEM */}
