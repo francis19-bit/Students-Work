@@ -15,7 +15,7 @@ function Footer() {
           justifyContent: "center",
         }}
       >
-        <h1>
+        <h1 style={{ color: "wheat" }}>
           Tasty's
           <br />
           Haven
@@ -36,6 +36,7 @@ function Footer() {
             alignItems: "center",
             justifyContent: "center",
             gap: "1em",
+            color: "wheat",
           }}
         >
           <li>Home</li>
@@ -64,7 +65,7 @@ function Footer() {
           flexDirection: "column",
         }}
       >
-        <Divider />
+        <Divider style={{ background: "whitesmoke" }} />
       </div>
       <div
         style={{
@@ -75,7 +76,7 @@ function Footer() {
           justifyContent: "center",
         }}
       >
-        <div style={{ fontSize: "20px" }}>
+        <div style={{ fontSize: "20px", color: "wheat" }}>
           Copyright © 2024 Tasty's Haven Restaurant | powered by Tasty's Haven
           Restaurant
         </div>

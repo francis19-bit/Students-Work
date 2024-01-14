@@ -17,7 +17,7 @@ function ReservationTable() {
           }}
           id="reserve"
         >
-          <Divider sx={{ width: "2px", height: "15vh", background: "black" }} />
+          <Divider sx={{ width: "2px", height: "15vh", background: "wheat" }} />
         </div>
         {/* Reservation Text Field Header */}
         <div

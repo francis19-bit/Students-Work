@@ -1,6 +1,6 @@
 import { Avatar, Card } from "@mui/material";
 
-function Cards() {
+function Cards({ src, dishName }) {
   return (
     <>
       <Card
@@ -9,7 +9,10 @@ function Cards() {
           height: "65%",
           display: "flex",
           flexDirection: "column",
-          border: "red solid 5px",
+          border: "wheat solid 5px",
+          borderRadius: "10px",
+          background:
+            "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,62,38,1) 62%, rgba(80,61,28,1) 90%)",
         }}
       >
         <div
@@ -21,7 +24,7 @@ function Cards() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ width: "60%", height: "23vh" }} />
+          <Avatar src={src} sx={{ width: "60%", height: "23vh" }} />
         </div>
         <div
           style={{
@@ -32,7 +35,7 @@ function Cards() {
             alignItems: "center",
           }}
         >
-          <h6>hello</h6>
+          <h6 style={{ fontSize: "20px", color: "white" }}>{dishName}</h6>
         </div>
       </Card>
     </>

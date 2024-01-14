@@ -15,7 +15,7 @@
 .body {
   width: 100%;
   height: 600vh;
-  /* background: red; */
+  background: peru;
 }
 
 /* Grid System */
@@ -49,7 +49,11 @@
 }
 .fourthGrid {
   grid-area: four;
-  background: yellow;
+  background: linear-gradient(
+    90deg,
+    rgba(116, 94, 56, 1) 0%,
+    rgba(80, 61, 28, 1) 0%
+  );
 }
 /* End of GRIDING COMPONENTS */
 

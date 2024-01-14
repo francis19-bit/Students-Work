@@ -8,7 +8,21 @@ import Swipper from "../features/Swip";
 import ReservationTable from "../component/ReservationTable/ReservationTable";
 import { Link } from "react-router-dom";
 
+// Imported images
+import image1 from "../assets/delicious-fried-chicken-plate.jpg";
+import image2 from "../assets/fresh-tomato-soup-with-grilled-baguette-garnish-generated-by-ai.jpg";
+import image3 from "../assets/thai-food-spicy-chicken-tendon-soup.jpg";
+import image4 from "../assets/closeup-roasted-meat-with-sauce-vegetables-fries-plate-table.jpg";
+import Map from "../features/Map/Map";
+
 function Home() {
+  const images = [
+    { image: image1, name: "chicken" },
+    { image: image2, name: "soup" },
+    { image: image3, name: "soup" },
+    { image: image4, name: "meat" },
+  ];
+
   const url =
     "https://recipe-by-api-ninjas.p.rapidapi.com/v1/recipe?query=italian%20wedding%20soup";
   const options = {
@@ -119,7 +133,7 @@ function Home() {
                 }}
               >
                 <Divider
-                  sx={{ width: "2px", height: "15vh", background: "black" }}
+                  sx={{ width: "2px", height: "15vh", background: "wheat" }}
                 />
               </div>
             </div>
@@ -174,10 +188,18 @@ function Home() {
                   gap: "1em",
                 }}
               >
-                <Cards />
-                <Cards />
-                <Cards />
-                <Cards />
+                {images?.map((data, index) => {
+                  // const { pics, names } = data;
+                  return (
+                    <>
+                      <Cards
+                        key={index}
+                        src={data.image}
+                        dishName={data.name}
+                      />
+                    </>
+                  );
+                })}
               </div>
             </div>
             {/* End Of Flex */}
@@ -208,7 +230,7 @@ function Home() {
                 >
                   {/* Divider */}
                   <Divider
-                    sx={{ width: "2px", height: "15vh", background: "black" }}
+                    sx={{ width: "2px", height: "15vh", background: "wheat" }}
                   />
                 </div>
                 {/* location area */}
@@ -255,7 +277,7 @@ function Home() {
                     >
                       {/* CONTACT */}
                       <h2 style={{ float: "left" }}>Contact</h2>
-                      <Divider sx={{ width: "100%" }} />
+                      <Divider sx={{ width: "100%", background: "wheat" }} />
                       <div
                         style={{
                           display: "flex",
@@ -266,7 +288,7 @@ function Home() {
                         <h4>Phone</h4>
                         <div>(555) 555-1234</div>
                       </div>
-                      <Divider sx={{ width: "100%" }} />
+                      <Divider sx={{ width: "100%", background: "wheat" }} />
                       <div
                         style={{
                           display: "flex",
@@ -289,7 +311,7 @@ function Home() {
                         }}
                       >
                         <h2 style={{ float: "left" }}>OPENING HOURS</h2>
-                        <Divider sx={{ width: "100%" }} />
+                        <Divider sx={{ width: "100%", background: "wheat" }} />
                         <div
                           style={{
                             display: "flex",
@@ -300,7 +322,7 @@ function Home() {
                           <h4>Monday-Friday</h4>
                           <div>9:00 AM - 10:00 PM</div>
                         </div>
-                        <Divider sx={{ width: "100%" }} />
+                        <Divider sx={{ width: "100%", background: "wheat" }} />
                         <div
                           style={{
                             display: "flex",
@@ -311,7 +333,7 @@ function Home() {
                           <h4>Saturday</h4>
                           <div>9:00 AM - 18:00 PM</div>
                         </div>
-                        <Divider sx={{ width: "100%" }} />
+                        <Divider sx={{ width: "100%", background: "wheat" }} />
                         <div
                           style={{
                             display: "flex",
@@ -326,7 +348,15 @@ function Home() {
                     </div>
                   </div>
                   {/* Map */}
-                  <div style={{ flex: ".5", background: "white" }}></div>
+                  <div
+                    style={{
+                      flex: ".5",
+                      background: "white",
+                      // overflow: "hidden",
+                    }}
+                  >
+                    <Map />
+                  </div>
                 </div>
               </div>
               <div

@@ -80,16 +80,17 @@ function ScreensHead({
               alignItems: "center",
               gap: "1em",
               fontSize: "20px",
+              color: "wheat",
             }}
           >
-            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <Link to="/" style={{ textDecoration: "none", color: "wheat" }}>
               {" "}
               <li>{Home}</li>
             </Link>
 
             <Link
               to="/OurMenu"
-              style={{ textDecoration: "none", color: "black" }}
+              style={{ textDecoration: "none", color: "wheat" }}
             >
               <li>{Menu}</li>
             </Link>
@@ -108,7 +109,12 @@ function ScreensHead({
           }}
         >
           <h4
-            style={{ fontSize: "28px", fontWeight: "500" }}
+            style={{
+              fontSize: "30px",
+              fontWeight: "500",
+              color: "rgb(116,94,56)",
+              font: "bold",
+            }}
             onClick={handleTastyHavens}
           >
             {Tasty} <br /> {Haven}

@@ -80,7 +80,7 @@ function Menu() {
             <div
               style={{
                 flex: ".7",
-                background: "peru",
+                // background: "peru",
                 display: "flex",
                 alignItems: "center",
                 // justifyContent: "center",
@@ -119,7 +119,7 @@ function Menu() {
             <div
               style={{
                 flex: ".3",
-                background: "pink",
+                // background: "pink",
               }}
             >
               <ReservationTable />
