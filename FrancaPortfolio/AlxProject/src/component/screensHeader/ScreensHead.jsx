@@ -24,6 +24,10 @@ function ScreensHead({
     scrollpage(about);
   };
 
+  const mainManu = () => {
+    scrollpage(menu);
+  };
+
   // Settings for lenis smooth scroll
 
   const lenis = new Lenis({});

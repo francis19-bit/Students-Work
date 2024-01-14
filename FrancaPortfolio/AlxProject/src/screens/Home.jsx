@@ -6,6 +6,7 @@ import Cards from "../component/Card/Card";
 import Footer from "../component/Footer/Footer";
 import Swipper from "../features/Swip";
 import ReservationTable from "../component/ReservationTable/ReservationTable";
+import { Link } from "react-router-dom";
 
 function Home() {
   const url =
@@ -42,7 +43,12 @@ function Home() {
           {/* GRIDING COMPONENTS */}
 
           {/* Contain the page header */}
-          <div className="firstGrid" style={{ display: "flex" }}>
+          <div
+            className="firstGrid"
+            style={{
+              display: "flex",
+            }}
+          >
             <ScreensHead
               Home={"Home"}
               Menu={"Menu"}
@@ -54,7 +60,7 @@ function Home() {
             />
           </div>
           {/* End of page header */}
-          <div className="secondGrid">
+          <div className="secondGrid" style={{ overflow: "hidden" }}>
             <Swipper />
           </div>
           <div
@@ -124,6 +130,7 @@ function Home() {
                 display: "flex",
                 flexDirection: "column",
               }}
+              id="menu"
             >
               {/* Menu, list & BTN */}
               <div
@@ -142,7 +149,18 @@ function Home() {
                   Taste the versatility and deliciousness of eggs in all their
                   forms
                 </small>
-                <Buttons NameBtn={"Full Menu"} width={"20%"} />
+                <Link
+                  to="/OurMenu"
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Buttons NameBtn={"Full Menu"} width={"20%"} />
+                </Link>
               </div>
               {/* Cards */}
               <div

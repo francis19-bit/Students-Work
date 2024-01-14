@@ -22,7 +22,7 @@
 .gridBody {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 2% 15% 77% 6%;
+  grid-template-rows: 1.9% 15.1% 77% 6%;
   grid-template-areas: "one" "two" "three" "four";
   /* width: 100vw; */
   height: 600vh;
@@ -35,7 +35,13 @@
 }
 .secondGrid {
   grid-area: two;
-  background: green;
+  /* background: green; */
+  background-image: url(../src/assets/healthy-vegetable-soup-cooked-with-fresh-meat-generated-by-ai.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 .thirdGrid {
   grid-area: three;
